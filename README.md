@@ -50,12 +50,15 @@ Run the Integration Tests:
 `mvn clean verify`
 
 Run a local service:
-`java -jar java -jar target/victims-java-service-1.0-SNAPSHOT-fat.jar`
+`java -jar target/victims-java-service-1.0-SNAPSHOT-fat.jar`
+
+Run with a custom configuration:
+`java -jar target/victims-java-service-1.0.SNAPSHOT-fat.jar -conf src/main/resources/my-config.json`
 
 ### Running with Docker
 
 Package the service as a Docker image using S2I:
 `s2i build . redhat-openjdk-18/openjdk18-openshift victims-java`
 
-Run the image passing MongoDB environment variables:
+Run the image:
 `docker run -d -p 8080:8080 victims-java`
